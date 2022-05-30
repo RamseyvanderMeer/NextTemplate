@@ -1,24 +1,28 @@
 import Head from 'next/head'
 import clientPromise from '../lib/mongodb'
+import Link from "next/link"
 
 export default function Home({ isConnected }) {
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>Ramsey van der Meer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
         <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js with MongoDB!</a>
+          Read{" "}
+          <Link href="/projects/project">
+            <a>this page!</a>
+          </Link>
         </h1>
 
         {isConnected ? (
           <h2 className="subtitle">You are connected to MongoDB</h2>
         ) : (
           <h2 className="subtitle">
-            You are NOT connected to MongoDB. Check the <code>README.md</code>{' '}
+            You are NOT connected to MongoDB. Check the <code>README.md</code>{" "}
             for instructions.
           </h2>
         )}
@@ -64,7 +68,7 @@ export default function Home({ isConnected }) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
         </a>
       </footer>
